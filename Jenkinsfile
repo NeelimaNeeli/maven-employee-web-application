@@ -17,5 +17,7 @@ pipeline {
    stage ('Creating Docker Container') {
      steps {
        sh 'docker run -d -p 9923:8080 neelima640/emp2 --name=employee1'
+     }
+   }
   }
 }
