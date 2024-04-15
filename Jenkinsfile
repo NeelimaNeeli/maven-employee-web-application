@@ -19,7 +19,7 @@ pipeline {
             steps {
                 withKubeConfig([credentialsId: 'kubeconfig-employee', serverUrl: 'https://127.0.0.1:6443']) {
                   sh 'kubectl create deploy employee3 --image=neelima640/emp:2'
-                 # sh 'kubectl delete -f deploy.yaml'
+                 #sh 'kubectl delete -f deploy.yaml'
                   #sh 'kubectl apply -f deploy.yaml'
                   #sh 'sleep 5'
                   #sh 'kubectl get svc -n sathvi'
