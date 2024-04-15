@@ -19,7 +19,7 @@ pipeline {
        sh 'docker run -d -p 9923:8080 --name=employee1 neelima640/emp:2'
      }
    }
-  stsge ('Creating Kubernetes Deployment') {
+  stage ('Creating Kubernetes Deployment') {
     steps {
       sh 'kubectl create deploy employee1 --image neelima640/emp:2'
     }
