@@ -17,7 +17,7 @@ pipeline {
    
   stage ('Creating Kubernetes Deployment') {
     steps {
-      sh 'kubectl create deploy employee1 --image neelima640/emp:2'
+      sh 'kubectl create deploy employee1 --image=neelima640/emp:2'
     }
    }
   }
