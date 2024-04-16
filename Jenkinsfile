@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  environment {
+        KUBECONFIG_CREDENTIALS = credentials('kubeconfig-employee')
+        KUBE_SERVER_URL = 'https://127.0.0.1:6443'
+    }
   stages {
     stage ('build') {
       steps {
@@ -17,7 +21,7 @@ pipeline {
    
    stage('Creating k8s deployment') {
             steps {
-                withKubeConfig([credentialsId: 'kubeconfig-employee', serverUrl: 'https://127.0.0.1:6443']) {
+                withKubeConfig([credentialsId: KUBECONFIG_CREDENTIALS, serverUrl: KUBE_SERVER_URL]) {
                   sh 'kubectl create deploy employee3 --image=neelima640/emp:2'
                  
                 }
