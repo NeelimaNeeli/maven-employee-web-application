@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-        KUBECONFIG_CREDENTIALS = credentials('kubeconfig-employee')
+        KUBECONFIG_CREDENTIALS = credentials('kubeconfig-emp')
         KUBE_SERVER_URL = 'https://127.0.0.1:6443'
     }
   stages {
