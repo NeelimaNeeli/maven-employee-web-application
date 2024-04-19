@@ -18,7 +18,7 @@ pipeline {
    
    stage('Creating k8s deployment') {
             steps {
-                withKubeConfig([credentialsId:'kubeconfig-emp', serverUrl:'https://127.0.0.1:6443']) {
+                withKubeConfig([credentialsId:'kubeconfig-emp']) {
                   sh 'kubectl create deploy employee3 --image=neelima640/emp:2'
                  
                 }
