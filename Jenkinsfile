@@ -22,6 +22,7 @@ pipeline {
                   
                   sh 'kubectl delete deploy employee3 -n employee'
                   sh 'kubectl create deploy employee3 --image=neelima640/emp:2 -n employee'
+                  sh 'kubectl delete svc employee3 -n employee'
                   sh 'kubectl expose deploy employee3 --type=NodePort --port=9966 --target-port=80 -n employee'
                   sh 'kubectl get svc -n employee'
                  
