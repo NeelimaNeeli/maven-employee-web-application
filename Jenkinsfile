@@ -20,6 +20,7 @@ pipeline {
             steps {
                 withKubeConfig([credentialsId:'kubeconfig']) {
                   sh 'kubectl create deploy employee3 --image=neelima640/emp:2'
+                  sh 'kubectl expose deploy employee3 --type=NodePort --port=9966 --target-port=80'
                  
                 }
             }
