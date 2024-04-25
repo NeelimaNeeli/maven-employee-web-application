@@ -19,7 +19,7 @@ pipeline {
    stage('Creating k8s deployment') {
             steps {
                 withKubeConfig([credentialsId:'kubeconfig']) {
-                  sh 'kubectl create ns employee'
+                  
                  
                   sh 'kubectl create deploy employee3 --image=neelima640/emp:2 -n employee'
                   sh 'kubectl expose deploy employee3 --type=NodePort --port=9966 --target-port=80 -n employee'
