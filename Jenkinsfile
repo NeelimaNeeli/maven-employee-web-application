@@ -21,7 +21,7 @@ pipeline {
             steps {
                 withKubeConfig([credentialsId:'kubeconfig']) {
                   
-                  sh 'kubectl delete deploy employee3 -n employee'
+                  //sh 'kubectl delete deploy employee3 -n employee'
                   sh 'kubectl delete svc emp-svc -n employee'
                   
                   sh 'kubectl create deploy employee3 --image=neelima640/emp:2 -n employee'
